@@ -1,0 +1,13 @@
+      <div id="loader">
+            <div class="spinner"></div></div>
+
+<script>
+  $(document).ready(function(){
+        $("#loader").hide();
+        $("#id_fpo").click(function(){
+            $("#loader").show();
+        });
+    });
+  $(document).load(function () {
+        $("#loader").hide();
+   });</script>

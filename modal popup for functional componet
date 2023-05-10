@@ -1,0 +1,42 @@
+ const [showModal, setShowModal] = useState(false);
+
+  function handleImageClick() {
+    setShowModal(true);
+  }
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+  function MyModal({ showModal, setShowModal }) {
+    const handleCloseModal = () => setShowModal(false);
+    return (
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered>
+        <Modal.Header closeButton style={{ marginTop: "30px" }}></Modal.Header>
+        <Modal.Body>
+          <div style={{ height: "560px"}}>
+          {rowDetail.presigned_url!=null?
+              (<img src={rowDetail.presigned_url} alt="photo" height="100%" width="100%"/>)
+                :                 
+              (rowDetail.gender===2? <img src={farmerfemale} height="100%" width="100%" alt="photo"/>
+              : <img src={farmerIcon} height="100%" width="100%" alt="photo" />)
+              }
+            
+          </div>
+        </Modal.Body>
+      </Modal>
+    );
+  }
+
+
+   (<img src={rowDetail.presigned_url} className="farmer-photo" alt="photo" onClick={handleImageClick}/>)
+                :                 
+              ( rowDetail.gender===2? <img src={farmerfemale} style={{height:"80px",width:"110px",marginLeft:"8px",marginTop:"6px"}} alt="photo" onClick={handleImageClick}/>
+              : <img src={farmerIcon} style={{height:"70px",width:"120px",marginTop:"10px",marginLeft:"5px"}} alt="photo" onClick={handleImageClick} />)
+              }
+              <MyModal
+               showModal={showModal}
+               setShowModal={setShowModal}/>
